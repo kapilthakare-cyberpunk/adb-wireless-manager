@@ -1,102 +1,46 @@
-# 📱 ADB Wireless Manager
+# adb-wireless-manager
 
-Quick and persistent wireless ADB connection manager for Android devices (optimized for Samsung Galaxy S23 Ultra).
+## Overview
+Python-based GUI and script suite for managing Android Debug Bridge (ADB) wireless connections. It simplifies the process of connecting to Android devices over a network for remote debugging and file management.
 
-## Features
+## Project Purpose
+Provide a user-friendly interface for ADB wireless operations, reducing the reliance on repetitive command-line inputs. It automates device discovery, pairing, and connection management.
 
-- 🔌 One-click wireless ADB connection
-- 🖥️ GUI app for easy management
-- 🚀 Terminal shortcut for quick access
-- 📌 Desktop shortcut integration
-- ⚡ Auto-reconnect capability
+## Key Features
+- Graphical Interface: Built with Python for cross-platform device management.
+- Wireless Connection Support: Simplifies ADB over TCP/IP connections.
+- Automated Discovery: Identifies available devices on the local network.
+- Configurable Settings: Persistent storage for device IPs and connection ports via config.ini.
 
-## Quick Start
-
-### Prerequisites
-
-- ADB installed (`sudo apt install adb`)
-- Android device with USB debugging enabled
-- Device and computer on the same WiFi network
-
-### Initial Setup (One-time)
-
-1. Connect your device via USB
-2. Run the setup script:
-   ```bash
-   ./scripts/initial-setup.sh
-   ```
-3. The script will:
-   - Enable ADB over WiFi (port 5555)
-   - Detect your device's IP address
-   - Configure all connection scripts
-
-### Usage
-
-**Option 1: Terminal (Fastest)**
-```bash
-./scripts/connect.sh
-```
-
-**Option 2: GUI App**
-```bash
-python3 gui/adb_wireless_manager.py
-```
-
-**Option 3: Desktop Shortcut**
-- Double-click `ADB Wireless Connect.desktop` on your desktop
+## Prerequisites
+- Python (v3.8 or higher).
+- Android SDK Platform-Tools (ADB) installed and in System PATH.
+- Android device with Wireless Debugging enabled.
 
 ## Installation
-
 ```bash
-# Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/kapilthakare-cyberpunk/adb-wireless-manager
 cd adb-wireless-manager
-
-# Make scripts executable
-chmod +x scripts/*.sh
-
-# Optional: Install desktop shortcut
-./scripts/install-desktop-shortcut.sh
+pip install -r requirements.txt
 ```
 
 ## Configuration
+- Update config.ini with preferred default settings.
+- Ensure the Android device is on the same network as the host machine.
 
-Edit `config.ini` to change:
-- Device IP address
-- ADB port (default: 5555)
-- Device name
-
-## Files
-
+## Usage
+### Running the GUI
+```bash
+python gui/main.py
 ```
-adb-wireless-manager/
-├── scripts/
-│   ├── connect.sh          # Quick connect script
-│   ├── initial-setup.sh    # One-time setup script
-│   └── install-desktop-shortcut.sh
-├── gui/
-│   └── adb_wireless_manager.py  # GUI application
-├── ADB Wireless Connect.desktop  # Desktop shortcut
-├── config.ini              # Configuration file
-├── README.md
-└── requirements.txt
+### Running scripts directly
+```bash
+python scripts/connect_wireless.py --ip <device-ip> --port <port>
 ```
 
-## Troubleshooting
-
-**Device not connecting?**
-- Ensure both devices are on the same WiFi network
-- Check that Wireless Debugging is enabled on your phone
-- Verify the IP address is correct (run `./scripts/initial-setup.sh` to update)
-
-**IP address changed?**
-- Run `./scripts/initial-setup.sh` again to detect new IP
-- Or manually update `config.ini`
+## Development
+- Add new features to the gui/ or scripts/ directories.
+- Test connection stability across different network conditions.
 
 ## License
-
-MIT License
-
-## Author
-
-Created for Galaxy S23 Ultra wireless ADB management
+Refer to the LICENSE file for details.
