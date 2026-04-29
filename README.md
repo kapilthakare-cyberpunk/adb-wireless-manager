@@ -1,46 +1,41 @@
-# adb-wireless-manager
+# ADB Wireless Manager
 
-## Overview
-Python-based GUI and script suite for managing Android Debug Bridge (ADB) wireless connections. It simplifies the process of connecting to Android devices over a network for remote debugging and file management.
+## About
+**ADB Wireless Manager** is a Python-based GUI and script suite designed to simplify the management of Android Debug Bridge (ADB) wireless connections. It eliminates the need for repetitive command-line inputs by providing a user-friendly interface for device discovery, pairing, and connection management over a network.
 
-## Project Purpose
-Provide a user-friendly interface for ADB wireless operations, reducing the reliance on repetitive command-line inputs. It automates device discovery, pairing, and connection management.
+## Features
+- **Graphical User Interface:** Easy-to-use Python-based GUI for managing connections.
+- **Wireless Connection Support:** Streamlined workflow for ADB over TCP/IP.
+- **Automated Discovery:** Quickly identify and connect to available devices on the local network.
+- **Persistent Configuration:** Save device IPs and connection ports in `config.ini` for quick access.
+- **Direct Scripting:** Standalone scripts for power users who prefer the command line.
 
-## Key Features
-- Graphical Interface: Built with Python for cross-platform device management.
-- Wireless Connection Support: Simplifies ADB over TCP/IP connections.
-- Automated Discovery: Identifies available devices on the local network.
-- Configurable Settings: Persistent storage for device IPs and connection ports via config.ini.
-
-## Prerequisites
-- Python (v3.8 or higher).
-- Android SDK Platform-Tools (ADB) installed and in System PATH.
-- Android device with Wireless Debugging enabled.
-
-## Installation
-```bash
-git clone https://github.com/kapilthakare-cyberpunk/adb-wireless-manager
-cd adb-wireless-manager
-pip install -r requirements.txt
-```
-
-## Configuration
-- Update config.ini with preferred default settings.
-- Ensure the Android device is on the same network as the host machine.
+## Tech Stack
+- **Language:** Python 3.8+
+- **Frameworks:** Tkinter/CustomTkinter (GUI)
+- **Tools:** Android SDK Platform-Tools (ADB)
 
 ## Usage
-### Running the GUI
+
+### Installation
+1. Ensure Python 3.8+ is installed.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Ensure `adb` is in your system PATH.
+
+### Running the Application
+To start the GUI:
 ```bash
 python gui/main.py
 ```
-### Running scripts directly
+
+### Command Line Usage
+To connect to a device directly using scripts:
 ```bash
 python scripts/connect_wireless.py --ip <device-ip> --port <port>
 ```
 
-## Development
-- Add new features to the gui/ or scripts/ directories.
-- Test connection stability across different network conditions.
-
-## License
-Refer to the LICENSE file for details.
+---
+*Maintained by Kapil T.*
